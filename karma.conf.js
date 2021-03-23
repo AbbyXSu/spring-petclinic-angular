@@ -32,4 +32,4 @@ module.exports = function (config) {
     junitReporter: {
     outputFile: 'test-results.xml'
   },
-};
+});

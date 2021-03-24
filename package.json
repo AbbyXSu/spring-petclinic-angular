@@ -56,5 +56,6 @@
     "tslint": "~5.15.0",
     "typescript": "3.4.5",
     "progress": "2.0.3",
+    "karma-coverage": "2.0.3"
   }
 }

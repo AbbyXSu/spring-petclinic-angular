@@ -3,7 +3,7 @@
 module.exports = function (config) {
     config.set({
       basePath: '',
-      frameworks: ['jasmine', '@angular-devkit/build-angular'],
+      frameworks: ['jasmine', '@angular-devkit/build-angular', 'karma-typescript'],
       plugins: [
         require('karma-jasmine'),
         require('karma-chrome-launcher'),
@@ -20,7 +20,12 @@ module.exports = function (config) {
         dir: require('path').join(__dirname, 'coverage'), reports: [ 'html', 'lcovonly' ],
         fixWebpackSourcePaths: true
       },
-      
+      files: [
+        { pattern: "src/**/*.ts" }
+      ],
+      preprocessors: {
+        "**/*.ts": ["karma-typescript"]
+      },
      //reporters: ['progress', 'kjhtml'],
       //port: 9876,
       //colors: true,
@@ -29,7 +34,7 @@ module.exports = function (config) {
       //browsers: ['Chrome'],
       //singleRun: false
       singleRun: true,
-      reporters: ['dots', 'junit', 'progress'],
+      reporters: ['dots', 'junit', 'progress', "karma-typescript"],
       browsers: ['PhantomJS'],
       junitReporter: {
       outputFile: 'test-results.xml'

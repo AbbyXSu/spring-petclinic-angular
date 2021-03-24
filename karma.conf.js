@@ -29,7 +29,8 @@ module.exports = function (config) {
       //browsers: ['Chrome'],
       //singleRun: false
       singleRun: true,
-      reporters: ['dots', 'junit'],
+      reporters: ['dots', 'junit', 'progress'],
+      browsers: ['PhantomJS'],
       junitReporter: {
       outputFile: 'test-results.xml'
     },
